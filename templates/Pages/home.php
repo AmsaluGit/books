@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -13,6 +14,7 @@
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  * @var \App\View\AppView $this
  */
+
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
 use Cake\Core\Plugin;
@@ -59,6 +61,7 @@ endif;
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,12 +71,13 @@ endif;
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'fonts', 'cake', 'home','bootstrap']) ?>
+    <?= $this->Html->css(['normalize.min', 'milligram.min', /*'fonts',*/ 'cake', 'home', 'bootstrap']) ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
+
 <body>
     <header>
         <div class="container text-center">
@@ -86,10 +90,8 @@ endif;
     <main class="main">
         <div class="container">
             <div class="content">
-                <div class="row">
-
-                <button class="button">Books</button>
-  <button class="button">Authors</button>
+                    <a class="btn btn-info" type="button" href="/books">Books</a>
+                    <a class="btn btn-info" type="button" href="/authors">Authors</a>
 
                 </div>
 
@@ -97,4 +99,5 @@ endif;
         </div>
     </main>
 </body>
+
 </html>
