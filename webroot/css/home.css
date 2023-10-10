@@ -73,3 +73,14 @@ hr {
 #url-rewriting-warning {
     display: none;
 }
+
+.button {
+    display: inline-block;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
