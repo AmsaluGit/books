@@ -12,9 +12,12 @@ Requirements:
 - You may choose between using CakePHP or core PHP for this task.
 
 ## Steps of Installation
-
-- git clone https://github.com/AmsaluGit/books.git
+``` bash
+$ git clone https://github.com/AmsaluGit/books.git
+```
+``` bash
 - cd books
+```
 - Update config/.env according to your database credentials
 ``` bash
 $ composer install
