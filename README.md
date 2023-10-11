@@ -13,26 +13,26 @@ Requirements:
 
 ## Steps of Installation
 ``` bash
-$ git clone https://github.com/AmsaluGit/books.git
+git clone https://github.com/AmsaluGit/books.git
 ```
 ``` bash
 - cd books
 ```
 - Update config/.env according to your database credentials
 ``` bash
-$ composer install
+composer install
 ```
 - create database 'books' in your machine.
 
 - open terminal and run the followings commands:
 ``` bash
-$ bin/cake migrations migrate
+bin/cake migrations migrate
 ```
 ``` bash
-$ vendor/bin/phinx seed:run
+vendor/bin/phinx seed:run
 ```
 ``` bash
-$ bin/cake server
+bin/cake server
 ```
 
 
