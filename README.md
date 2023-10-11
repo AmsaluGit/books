@@ -16,7 +16,7 @@ Requirements:
 git clone https://github.com/AmsaluGit/books.git
 ```
 ``` bash
-- cd books
+cd books
 ```
 - Update config/app_local.php datasource according to your database credentials.
 ``` bash
