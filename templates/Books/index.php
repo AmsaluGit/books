@@ -28,7 +28,7 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col"><?= $this->Paginator->sort('title', 'Book.title') ?></th>
+                        <th scope="col"><?= $this->Paginator->sort('title', 'Tite') ?></th>
                         <th scope="col"><?= $this->Paginator->sort('author_id') ?></th>
                         <th scope="col"><?= $this->Paginator->sort('genre') ?></th>
                         <th scope="col" class="actions"><?= __('Actions') ?></th>
