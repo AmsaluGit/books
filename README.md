@@ -16,12 +16,21 @@ Requirements:
 - git clone https://github.com/AmsaluGit/books.git
 - cd books
 - Update config/.env according to your database credentials
-- composer install
+``` bash
+$ composer install
+```
 - create database 'books' in your machine.
 
 - open terminal and run the followings commands:
-- bin/cake migrations migrate
-- vendor/bin/phinx seed:run
-- bin/cake server
+``` bash
+$ bin/cake migrations migrate
+```
+``` bash
+$ vendor/bin/phinx seed:run
+```
+``` bash
+$ bin/cake server
+```
+
 
 - go to the link generated on your terminal.
