@@ -59,7 +59,7 @@ class AuthorsTable extends Table
         $validator
             ->scalar('name')
             ->maxLength('name', 255)
-            ->allowEmptyString('name');
+            ->notEmptyString('name');
 
         return $validator;
     }

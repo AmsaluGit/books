@@ -71,7 +71,7 @@ endif;
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', /*'fonts',*/ 'cake', 'home', 'bootstrap']) ?>
+    <?= $this->Html->css([/*'normalize.min', 'milligram.min', 'fonts', 'cake', 'home', */'bootstrap.min']) ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -80,22 +80,36 @@ endif;
 
 <body>
     <header>
-        <div class="container text-center">
-
-            <h1>
-                Welcome to Authors Page
-            </h1>
+        <div class="text-center mt-5" >
+<h1>Welcome to Authors Page </h1>
         </div>
     </header>
     <main class="main">
-        <div class="container">
-            <div class="content">
-                    <a class="btn btn-info" type="button" href="/books">Books</a>
-                    <a class="btn btn-info" type="button" href="/authors">Authors</a>
 
+        <div class="containter">
+            <div class="row">
+                <div class="col-md-10 row mx-auto mt-5">
+                    <div class="col-md-4">
+                        <div style="display: flex; width: 100%;">
+                            <a style="flex: 1;" class="btn btn-info" type="button" href="/authors">Manage Authors</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div style="display: flex; width: 100%;">
+                            <a style="flex: 1;" class="btn btn-info" type="button" href="/books">Manage Books</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div style="display: flex; width: 100%;">
+                            <a style="flex: 1;" class="btn btn-info" type="button" href="/reports/summary">Reports</a>
+                        </div>
+                    </div>
                 </div>
-
             </div>
+        </div>
+
+
+
         </div>
     </main>
 </body>

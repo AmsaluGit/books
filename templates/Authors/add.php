@@ -4,25 +4,25 @@
  * @var \App\Model\Entity\Author $author
  */
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Authors'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+
+<div class="d-flex justify-content-begin mt-4 mb-2">
+                <a href="<?= $this->Url->build('/authors') ?>">Back to list</a>
+ </div>
+
+
+<div class="card mt-3">
+        <div class="card card-header">
+            <h3><?= __('Add Author') ?></h3>
         </div>
-    </aside>
-    <div class="column column-80">
-        <div class="authors form content">
+        <div class="card card-body">
+
             <?= $this->Form->create($author) ?>
-            <fieldset>
-                <legend><?= __('Add Author') ?></legend>
+
                 <?php
-                    echo $this->Form->control('name');
+                    echo $this->Form->control('name', ['class' => 'form-control']);
                 ?>
-            </fieldset>
-            <br>
+             <br>
             <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-success']) ?>
             <?= $this->Form->end() ?>
-        </div>
+            </div>
     </div>
-</div>

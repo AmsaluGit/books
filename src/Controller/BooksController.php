@@ -1,7 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Controller;
+
+use Cake\Http\Response;
 
 /**
  * Books Controller
@@ -10,6 +13,8 @@ namespace App\Controller;
  */
 class BooksController extends AppController
 {
+
+
     /**
      * Index method
      *
@@ -18,12 +23,31 @@ class BooksController extends AppController
     public function index()
     {
 
+
+        // Get the sort and direction from the query parameters
+        $sortField = $this->request->getQuery('sort');
+        $sortDirection = $this->request->getQuery('direction');
+
+        if (empty($sortField)) {
+            $sortField = 'id';
+        }
+        if (empty($sortDirection)) {
+            $sortDirection = 'desc'; // show the latest on top.
+        }
+
+
         $this->paginate = [
-            'limit' => 5, // Number of records per page
+            'limit' => 10, // Number of records per page
         ];
 
         $query = $this->Books->find()
             ->contain(['Authors']);
+        if ($sortDirection == 'asc') {
+            $query = $query->orderAsc('Books.' . $sortField);
+        } else {
+            $query = $query->orderDesc('Books.' . $sortField);
+        }
+
         $books = $this->paginate($query);
 
         $this->set(compact('books'));
@@ -99,6 +123,11 @@ class BooksController extends AppController
         $book = $this->Books->get($id);
         if ($this->Books->delete($book)) {
             $this->Flash->success(__('The book has been deleted.'));
+            $response = new Response();
+            $response = $response->withType('application/json')
+                ->withStringBody(json_encode(['success' => true]));
+
+            return $response;
         } else {
             $this->Flash->error(__('The book could not be deleted. Please, try again.'));
         }

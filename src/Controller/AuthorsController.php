@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Http\Response;
+
 /**
  * Authors Controller
  *
@@ -18,11 +20,34 @@ class AuthorsController extends AppController
     public function index()
     {
 
+         // Get the sort and direction from the query parameters
+         $sortField = $this->request->getQuery('sort');
+         $sortDirection = $this->request->getQuery('direction');
+
+         if(empty($sortField))
+         {
+             $sortField = 'id';
+         }
+         if(empty($sortDirection))
+         {
+             $sortDirection = 'desc'; // show the latest on top.
+         }
+
         $this->paginate = [
-            'limit' => 2, // Number of records per page
+            'limit' => 10, // Number of records per page
         ];
 
         $query = $this->Authors->find();
+
+        if($sortDirection=='asc')
+        {
+            $query = $query->orderAsc('Authors.'.$sortField);
+        }
+        else
+        {
+            $query = $query->orderDesc('Authors.'.$sortField);
+        }
+
         $authors = $this->paginate($query);
 
         $this->set(compact('authors'));
@@ -96,6 +121,11 @@ class AuthorsController extends AppController
         $author = $this->Authors->get($id);
         if ($this->Authors->delete($author)) {
             $this->Flash->success(__('The author has been deleted.'));
+            $response = new Response();
+            $response = $response->withType('application/json')
+                ->withStringBody(json_encode(['success' => true]));
+
+            return $response;
         } else {
             $this->Flash->error(__('The author could not be deleted. Please, try again.'));
         }

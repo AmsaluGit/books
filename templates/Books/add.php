@@ -1,32 +1,33 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Book $book
  * @var \Cake\Collection\CollectionInterface|string[] $authors
  */
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Books'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+
+<div class="d-flex justify-content-begin mt-4 mb-2">
+                <a href="<?= $this->Url->build('/books') ?>">Back to list</a>
+ </div>
+
+
+    <div class="card mt-3">
+        <div class="card card-header">
+            <h3><?= __('Add Book') ?></h3>
         </div>
-    </aside>
-    <div class="column column-80">
-        <div class="books form content">
+        <div class="card card-body">
+
             <?= $this->Form->create($book) ?>
-            <fieldset>
-                <legend><?= __('Add Book') ?></legend>
                 <?php
-                    echo $this->Form->control('title');
-                    echo $this->Form->control('author_id', ['options' => $authors]);
-                    echo $this->Form->control('genre');
+                echo $this->Form->control('title', ['class' => 'form-control']);
+                echo $this->Form->control('author_id', ['class' => 'form-control', 'options' => $authors]);
+                echo $this->Form->control('genre', ['class' => 'form-control']);
                 ?>
-            </fieldset>
-            <br>
+             <br>
 
             <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-success']) ?>
             <?= $this->Form->end() ?>
         </div>
+
     </div>
-</div>

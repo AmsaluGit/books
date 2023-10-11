@@ -4,30 +4,26 @@
  * @var \App\Model\Entity\Author $author
  */
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $author->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $author->id), 'class' => 'side-nav-item']
-            ) ?>
-            <?= $this->Html->link(__('List Authors'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+
+<div class="d-flex justify-content-begin mt-4 mb-2">
+                <a href="<?= $this->Url->build('/authors') ?>">Back to list</a>
+ </div>
+
+<div class="card mt-4 mb-2">
+        <div class="card card-header">
+            <h3><?=  __('Edit Author') ?></h3>
         </div>
-    </aside>
-    <div class="column column-80">
-        <div class="authors form content">
+        <div class="card card-body">
+
             <?= $this->Form->create($author) ?>
-            <fieldset>
-                <legend><?= __('Edit Author') ?></legend>
+
                 <?php
-                    echo $this->Form->control('name');
+                    echo $this->Form->control('name', ['class' => 'form-control']);
                 ?>
-            </fieldset>
+
             <br>
-            <?= $this->Form->button(__('Submit')) ?>
+            <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-success']) ?>
             <?= $this->Form->end() ?>
         </div>
     </div>
-</div>
+

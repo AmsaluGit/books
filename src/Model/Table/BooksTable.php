@@ -60,7 +60,12 @@ class BooksTable extends Table
         $validator
             ->scalar('title')
             ->maxLength('title', 255)
-            ->allowEmptyString('title');
+            ->notEmptyString('title')
+            ->add('title', 'unique', [
+                'rule' => 'validateUnique',
+                'provider' => 'table',
+                'message' => 'This book title is already taken.'
+            ]);
 
         $validator
             ->nonNegativeInteger('author_id')
@@ -69,7 +74,7 @@ class BooksTable extends Table
         $validator
             ->scalar('genre')
             ->maxLength('genre', 100)
-            ->allowEmptyString('genre');
+            ->notEmptyString('genre');
 
         return $validator;
     }

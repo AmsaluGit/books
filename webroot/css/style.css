@@ -1,0 +1,72 @@
+
+/* Paginator */
+.paginator {
+    text-align: right;
+}
+.paginator p {
+    margin-bottom: 0;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0 0 1rem 0;
+    padding: 0;
+}
+.pagination li {
+    display: inline-block;
+    margin: 0.25em;
+    text-align: center;
+}
+.pagination a {
+    color: var(--color-cakephp-blue);
+    display: inline-block;
+    font-size: 1.25rem;
+    line-height: 3rem;
+    min-width: 3rem;
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+    transition: background .3s,color .3s;
+}
+.pagination li.active a,
+.pagination a:hover {
+    text-decoration: underline;
+}
+.pagination .disabled a {
+    cursor: not-allowed;
+    color: var(--color-lightgray);
+    text-decoration: none;
+}
+.first a,
+.prev a,
+.next a,
+.last a {
+    padding: 0 .75rem;
+}
+.disabled a:hover {
+    background: initial;
+    color: initial;
+}
+.asc:after {
+    content: " \2193";
+}
+.desc:after {
+    content: " \2191";
+}
+
+
+
+
+
+  td:last-child {
+    text-align: right;
+  }
+
+  th:last-child {
+    text-align: right;
+  }
+
+  .error-message {
+    color: red;
+}

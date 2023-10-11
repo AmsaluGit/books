@@ -92,42 +92,4 @@ hr {
 
 
 
-  .show-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
 
-  /* Style for the title */
-  .show-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  /* Style for the content section */
-  .show-content {
-    margin-bottom: 20px;
-  }
-
-  /* Style for the label of each field */
-  .show-label {
-    font-weight: bold;
-  }
-
-  /* Style for the value of each field */
-  .show-value {
-    margin-bottom: 10px;
-  }
-
-  /* Style for the back link */
-  .show-back-link {
-    display: inline-block;
-    margin-top: 20px;
-    color: #333;
-    text-decoration: none;
-  }
-
-  .show-back-link:hover {
-    text-decoration: underline;
-  }
