@@ -63,7 +63,7 @@ return [
         /*
          * The test connection is used during the test suite.
          */
-        'test' => [
+       /* 'test' => [
             'host' => 'localhost',
             //'port' => 'non_standard_port_number',
             'username' => 'my_app',
@@ -71,7 +71,7 @@ return [
             'database' => 'test_myapp',
             //'schema' => 'myapp',
             'url' => env('DATABASE_TEST_URL', 'sqlite://127.0.0.1/tmp/tests.sqlite'),
-        ],
+        ],*/
     ],
 
     /*

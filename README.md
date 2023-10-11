@@ -18,7 +18,7 @@ git clone https://github.com/AmsaluGit/books.git
 ``` bash
 - cd books
 ```
-- Update config/.env according to your database credentials
+- Update config/app_local.php datasource according to your database credentials.
 ``` bash
 composer install
 ```
@@ -36,4 +36,4 @@ bin/cake server
 ```
 
 
-- go to the link generated on your terminal.
+- open the link generated on your terminal with browser.
